@@ -87,6 +87,8 @@
     <Compile Include="Fragments\ArtistDetailFragment.cs" />
     <Compile Include="Extensions\DroidExtensions.cs" />
     <Compile Include="Adapters\AlbumsViewAdapter.cs" />
+    <Compile Include="Fragments\AlbumDetailFragment.cs" />
+    <Compile Include="Adapters\TracksViewAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -98,8 +100,18 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\listitem_artist.axml" />
     <AndroidResource Include="Resources\values\Colors.xml" />
-    <AndroidResource Include="Resources\layout\fragment_artist_detail.xml" />
+    <AndroidResource Include="Resources\layout\fragment_artist_detail.axml" />
     <AndroidResource Include="Resources\layout\carditem_album.axml" />
+    <AndroidResource Include="Resources\layout\fragment_album_detail.axml" />
+    <AndroidResource Include="Resources\layout\listitem_track.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_play_arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_stop.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_play_arrow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_stop.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_play_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_stop.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_play_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_stop.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -108,9 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -175,6 +184,7 @@
     <Folder Include="Adapters\" />
     <Folder Include="Behaviors\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

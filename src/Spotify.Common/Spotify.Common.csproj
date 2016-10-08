@@ -49,6 +49,9 @@
     <Compile Include="Models\Album.cs" />
     <Compile Include="Services\Impl\AlbumService.cs" />
     <Compile Include="Models\AlbumImage.cs" />
+    <Compile Include="Services\ITrackService.cs" />
+    <Compile Include="Models\Track.cs" />
+    <Compile Include="Services\Impl\TrackService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">

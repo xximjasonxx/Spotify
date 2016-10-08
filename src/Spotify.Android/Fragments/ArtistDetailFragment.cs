@@ -1,12 +1,8 @@
-﻿
-using System;
-using System.Linq;
-using Android.App;
+﻿using System.Linq;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Spotify.Common.Extensions;
-using Spotify.Droid.Extensions;
 using Spotify.Common.Models;
 using Spotify.Droid.Fragments.Abstract;
 using System.Threading.Tasks;
@@ -15,6 +11,7 @@ using Spotify.Common.IOC;
 using Android.Support.V7.Widget;
 using Spotify.Droid.Adapters;
 using Com.Bumptech.Glide;
+using Spotify.Droid.Behaviors;
 
 namespace Spotify.Droid.Fragments
 {
@@ -80,12 +77,13 @@ namespace Spotify.Droid.Fragments
             ShowProgressDialog();
             try
             {
-                HideProgressDialog();
                 var result = await _albumService.LoadAlbumsForArtistAsync(Artist.Id);
                 if (result)
                 {
                     _adapter.NotifyDataSetChanged();
                 }
+
+                HideProgressDialog();
             }
             catch
             {
@@ -95,6 +93,7 @@ namespace Spotify.Droid.Fragments
 
         void AlbumSelected(Album album)
         {
+            (Activity as IGoToFragment)?.GoToFragment(new AlbumDetailFragment(album), "AlbumDetail");
         }
     }
 }
