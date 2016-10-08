@@ -72,6 +72,9 @@
     <Reference Include="Xamarin.Android.Support.v7.CardView">
       <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
     </Reference>
+    <Reference Include="GlideAssembly">
+      <HintPath>..\Components\GlideComponent-3.7.0\lib\android\GlideAssembly.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fragments\ArtistListFragment.cs" />
@@ -138,6 +141,10 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="xamandroidsupportv7cardview">
       <Version>23.4.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="GlideComponent">
+      <Version>3.7.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

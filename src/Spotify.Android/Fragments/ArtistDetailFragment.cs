@@ -14,6 +14,7 @@ using Spotify.Common.Services;
 using Spotify.Common.IOC;
 using Android.Support.V7.Widget;
 using Spotify.Droid.Adapters;
+using Com.Bumptech.Glide;
 
 namespace Spotify.Droid.Fragments
 {
@@ -46,14 +47,19 @@ namespace Spotify.Droid.Fragments
         {
             base.OnViewCreated(view, savedInstanceState);
 
-            /*if (!Artist.Images.Any())
+            if (!Artist.Images.Any())
             {
                 View.FindViewById<ImageView>(Resource.Id.artistImage).Visibility = ViewStates.Gone;
             }
             else
             {
-                View.FindViewById<ImageView>(Resource.Id.artistImage).SetImageURI(new Uri(Artist.Images[0].ImageUrl));
-            }*/
+                var artistImage = View.FindViewById<ImageView>(Resource.Id.artistImage);
+                Glide.With(this)
+                     .Load(Artist.Images[0].ImageUrl)
+                     .CenterCrop()
+                     .CrossFade()
+                     .Into(artistImage);
+            }
 
             View.FindViewById<TextView>(Resource.Id.artistName).Text = Artist.Name;
             View.FindViewById<TextView>(Resource.Id.artistGenres).Text = Artist.Genres.Join(", ");
@@ -61,8 +67,9 @@ namespace Spotify.Droid.Fragments
 
             var recyclerView = View.FindViewById<RecyclerView>(Resource.Id.albumList);
             recyclerView.SetLayoutManager(new GridLayoutManager(Activity, 2));
+            recyclerView.NestedScrollingEnabled = false;
 
-            _adapter = new AlbumsViewAdapter(AlbumSelected);
+            _adapter = new AlbumsViewAdapter(this, AlbumSelected);
             recyclerView.SetAdapter(_adapter);
 
             await LoadAlbums();

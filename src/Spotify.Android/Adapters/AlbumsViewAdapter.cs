@@ -7,6 +7,9 @@ using Spotify.Common.IOC;
 using Spotify.Droid.Extensions;
 using Spotify.Common.Models;
 using Spotify.Common.Services;
+using Com.Bumptech.Glide;
+using Android.Content;
+using Android.App;
 
 namespace Spotify.Droid.Adapters
 {
@@ -14,26 +17,35 @@ namespace Spotify.Droid.Adapters
     {
         private readonly Action<Album> _selectAction;
         private readonly IAlbumService _albumService;
+        private readonly WeakReference<Fragment> _parentFragment;
 
         public override int ItemCount
         {
             get { return _albumService.CurrentAlbums.Count; }
         }
 
-        public AlbumsViewAdapter(Action<Album> selectAction)
+        public AlbumsViewAdapter(Fragment fragment, Action<Album> selectAction)
         {
             _selectAction = selectAction;
             _albumService = Container.Instance.Resolve<IAlbumService>();
+            _parentFragment = new WeakReference<Fragment>(fragment);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             var vh = (AlbumItemViewHolder)holder;
             var album = _albumService.CurrentAlbums.ElementAt(position);
+            Fragment parentFragment;
+            _parentFragment.TryGetTarget(out parentFragment);
 
-            if (album.Images.Any())
+            if (album.Images.Any() && parentFragment != null)
             {
-                vh.AlbumImage.SetImageURI(new Uri(album.Images[0].Url));
+                
+                Glide.With(parentFragment)
+                     .Load(album.Images[0].Url)
+                     .FitCenter()
+                     .CrossFade()
+                     .Into(vh.AlbumImage);
             }
             else
             {
