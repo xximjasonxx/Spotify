@@ -3,8 +3,10 @@ using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using Spotify.Common.IOC;
+using Spotify.Common.Models;
 using Spotify.Common.Services;
 using Spotify.Droid.Adapters;
+using Spotify.Droid.Behaviors;
 using Spotify.Droid.Fragments.Abstract;
 
 namespace Spotify.Droid.Fragments
@@ -40,7 +42,7 @@ namespace Spotify.Droid.Fragments
             _artistsList = View.FindViewById<Android.Support.V7.Widget.RecyclerView>(Resource.Id.artistList);
             _artistsList.SetLayoutManager(new Android.Support.V7.Widget.LinearLayoutManager(Activity));
 
-            _adapter = new ArtistsViewAdapter();
+            _adapter = new ArtistsViewAdapter(ItemSelected);
             _artistsList.SetAdapter(_adapter);
         }
 
@@ -88,6 +90,12 @@ namespace Spotify.Droid.Fragments
                 PerformSearch(query);
             }
             return true;
+        }
+
+        public void ItemSelected(Artist artist)
+        {
+            var detailFragment = new ArtistDetailFragment(artist);
+            (Activity as IGoToFragment)?.GoToFragment(detailFragment, "ArtistDetail");
         }
     }
 }

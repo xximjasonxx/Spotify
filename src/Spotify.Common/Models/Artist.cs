@@ -16,5 +16,11 @@ namespace Spotify.Common.Models
 
         [JsonProperty("uri")]
         public string SpotifyUri { get; internal set; }
+
+        [JsonProperty("images")]
+        public IList<ArtistImage> Images { get; internal set; }
+
+        [JsonProperty("popularity")]
+        public int Popularity { get; internal set; }
     }
 }

@@ -33,6 +33,7 @@ namespace Spotify.Common.IOC
         {
             var cb = new ContainerBuilder();
             cb.RegisterType<ArtistService>().As<IArtistService>().SingleInstance();
+            cb.RegisterType<AlbumService>().As<IAlbumService>().SingleInstance();
 
             _container = cb.Build();
         }
