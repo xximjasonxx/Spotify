@@ -3,9 +3,10 @@ using Android.Content;
 using Android.OS;
 using Spotify.Droid.Fragments;
 
-namespace Spotify.Android
+namespace Spotify.Droid
 {
-    [Activity(Label = "Spotify", MainLauncher = true, Icon = "@mipmap/ic_launcher", Theme = "@style/Spotify.Base")]
+    [Activity(Label = "Spotify", MainLauncher = true, Icon = "@mipmap/ic_launcher", Theme = "@style/Spotify.Base",
+              ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

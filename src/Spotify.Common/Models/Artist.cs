@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Spotify.Common.Models
 {
     public class Artist
     {
-        public async Task<IList<Artist>> GetArtists()
-        {
-            using (var client = new HttpClient())
-            {
-                return null;
-            }
-        }
+        [JsonProperty("id")]
+        public string Id { get; internal set; }
+
+        [JsonProperty("name")]
+        public string Name { get; internal set; }
+
+        [JsonProperty("genres")]
+        public IList<string> Genres { get; internal set; }
+
+        [JsonProperty("uri")]
+        public string SpotifyUri { get; internal set; }
     }
 }
