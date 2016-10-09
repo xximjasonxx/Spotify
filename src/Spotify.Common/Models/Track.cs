@@ -5,6 +5,9 @@ namespace Spotify.Common.Models
 {
     public class Track
     {
+        [JsonProperty("id")]
+        public string Id { get; internal set; }
+
         [JsonProperty("disc_number")]
         public int DiscNumber { get; internal set; }
 

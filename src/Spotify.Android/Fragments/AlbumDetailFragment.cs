@@ -1,7 +1,7 @@
-﻿
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Android.App;
+using Android.Media;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -14,10 +14,12 @@ using Spotify.Droid.Fragments.Abstract;
 
 namespace Spotify.Droid.Fragments
 {
-    public class AlbumDetailFragment : FragmentBase
+    public class AlbumDetailFragment : FragmentBase, MediaPlayer.IOnPreparedListener, MediaPlayer.IOnCompletionListener
     {
         private readonly ITrackService _trackService;
         private Android.Support.V7.Widget.RecyclerView.Adapter _adapter;
+        private TracksViewAdapter.TrackItemViewHolder _trackPlaying;
+        private readonly MediaPlayer _mediaPlayer;
 
         public Album TheAlbum { get; private set; }
 
@@ -25,6 +27,10 @@ namespace Spotify.Droid.Fragments
         {
             TheAlbum = album;
             _trackService = Container.Instance.Resolve<ITrackService>();
+            _mediaPlayer = new MediaPlayer();
+            _mediaPlayer.SetAudioStreamType(Stream.Music);
+            _mediaPlayer.SetOnPreparedListener(this);
+            _mediaPlayer.SetOnCompletionListener(this);
         }
 
         public override void OnCreate(Bundle savedInstanceState)
@@ -62,7 +68,7 @@ namespace Spotify.Droid.Fragments
             var recyclerView = View.FindViewById<Android.Support.V7.Widget.RecyclerView>(Resource.Id.trackList);
             recyclerView.SetLayoutManager(new Android.Support.V7.Widget.LinearLayoutManager(Activity));
 
-            _adapter = new TracksViewAdapter();
+            _adapter = new TracksViewAdapter(TrackTapped);
             recyclerView.SetAdapter(_adapter);
 
             await LoadTracks();
@@ -87,6 +93,34 @@ namespace Spotify.Droid.Fragments
             }
         }
 
+        void TrackTapped(TracksViewAdapter.TrackItemViewHolder viewHolder)
+        {
+            if (_trackPlaying == null || _trackPlaying.Track.Id != viewHolder.Track.Id)
+            {
+                if (_trackPlaying != null)
+                {
+                    _trackPlaying.StopTrack();
+                    _mediaPlayer.Stop();
+                    _mediaPlayer.Reset();
+                }
 
+                _trackPlaying = viewHolder;
+                _mediaPlayer.SetDataSource(viewHolder.Track.PreviewUrl);
+                _trackPlaying.StartTrack();
+                _mediaPlayer.PrepareAsync();
+            }
+        }
+
+        public void OnPrepared(MediaPlayer mp)
+        {
+            _mediaPlayer.Start();
+        }
+
+        public void OnCompletion(MediaPlayer mp)
+        {
+            _trackPlaying.StopTrack();
+            _trackPlaying = null;
+            _mediaPlayer.Reset();
+        }
     }
 }
