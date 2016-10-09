@@ -77,31 +77,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fragments\ArtistListFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Fragments\Abstract\FragmentBase.cs" />
-    <Compile Include="Adapters\ArtistsViewAdapter.cs" />
     <Compile Include="Behaviors\IGoToFragment.cs" />
-    <Compile Include="Fragments\ArtistDetailFragment.cs" />
     <Compile Include="Extensions\DroidExtensions.cs" />
-    <Compile Include="Adapters\AlbumsViewAdapter.cs" />
-    <Compile Include="Fragments\AlbumDetailFragment.cs" />
-    <Compile Include="Adapters\TracksViewAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\fragment_artist_list.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\listitem_artist.axml" />
     <AndroidResource Include="Resources\values\Colors.xml" />
-    <AndroidResource Include="Resources\layout\fragment_artist_detail.axml" />
-    <AndroidResource Include="Resources\layout\fragment_album_detail.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_play_arrow.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_stop.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_play_arrow.png" />
