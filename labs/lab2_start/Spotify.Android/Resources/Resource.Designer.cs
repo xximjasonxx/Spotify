@@ -1546,8 +1546,8 @@ namespace Spotify.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070054
-			public const int action0 = 2131165268;
+			// aapt resource value: 0x7f070055
+			public const int action0 = 2131165269;
 			
 			// aapt resource value: 0x7f070042
 			public const int action_bar = 2131165250;
@@ -1573,8 +1573,8 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f070043
 			public const int action_context_bar = 2131165251;
 			
-			// aapt resource value: 0x7f070058
-			public const int action_divider = 2131165272;
+			// aapt resource value: 0x7f070059
+			public const int action_divider = 2131165273;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -1600,11 +1600,11 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f07001d
 			public const int always = 2131165213;
 			
-			// aapt resource value: 0x7f070052
-			public const int artistGenres = 2131165266;
+			// aapt resource value: 0x7f070053
+			public const int artistGenres = 2131165267;
 			
-			// aapt resource value: 0x7f070051
-			public const int artistName = 2131165265;
+			// aapt resource value: 0x7f070052
+			public const int artistName = 2131165266;
 			
 			// aapt resource value: 0x7f07001a
 			public const int beginning = 2131165210;
@@ -1612,14 +1612,14 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f07002c
 			public const int buttonPanel = 2131165228;
 			
-			// aapt resource value: 0x7f070055
-			public const int cancel_action = 2131165269;
+			// aapt resource value: 0x7f070056
+			public const int cancel_action = 2131165270;
 			
 			// aapt resource value: 0x7f07003a
 			public const int checkbox = 2131165242;
 			
-			// aapt resource value: 0x7f07005b
-			public const int chronometer = 2131165275;
+			// aapt resource value: 0x7f07005c
+			public const int chronometer = 2131165276;
 			
 			// aapt resource value: 0x7f07001e
 			public const int collapseActionView = 2131165214;
@@ -1648,8 +1648,8 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f07001b
 			public const int end = 2131165211;
 			
-			// aapt resource value: 0x7f070060
-			public const int end_padder = 2131165280;
+			// aapt resource value: 0x7f070061
+			public const int end_padder = 2131165281;
 			
 			// aapt resource value: 0x7f070026
 			public const int expand_activities_button = 2131165222;
@@ -1672,17 +1672,17 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f070027
 			public const int image = 2131165223;
 			
-			// aapt resource value: 0x7f07005f
-			public const int info = 2131165279;
+			// aapt resource value: 0x7f070060
+			public const int info = 2131165280;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
 			
-			// aapt resource value: 0x7f070059
-			public const int line1 = 2131165273;
+			// aapt resource value: 0x7f07005a
+			public const int line1 = 2131165274;
 			
-			// aapt resource value: 0x7f07005d
-			public const int line3 = 2131165277;
+			// aapt resource value: 0x7f07005e
+			public const int line3 = 2131165278;
 			
 			// aapt resource value: 0x7f07000a
 			public const int listMode = 2131165194;
@@ -1690,11 +1690,11 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f070029
 			public const int list_item = 2131165225;
 			
-			// aapt resource value: 0x7f070053
-			public const int mainContainer = 2131165267;
+			// aapt resource value: 0x7f070054
+			public const int mainContainer = 2131165268;
 			
-			// aapt resource value: 0x7f070057
-			public const int media_actions = 2131165271;
+			// aapt resource value: 0x7f070058
+			public const int media_actions = 2131165272;
 			
 			// aapt resource value: 0x7f07001c
 			public const int middle = 2131165212;
@@ -1704,6 +1704,9 @@ namespace Spotify.Droid
 			
 			// aapt resource value: 0x7f070020
 			public const int never = 2131165216;
+			
+			// aapt resource value: 0x7f070051
+			public const int nextButton = 2131165265;
 			
 			// aapt resource value: 0x7f07000f
 			public const int none = 2131165199;
@@ -1735,8 +1738,8 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f070034
 			public const int scrollView = 2131165236;
 			
-			// aapt resource value: 0x7f070061
-			public const int search_action = 2131165281;
+			// aapt resource value: 0x7f070062
+			public const int search_action = 2131165282;
 			
 			// aapt resource value: 0x7f070046
 			public const int search_badge = 2131165254;
@@ -1798,8 +1801,8 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f070019
 			public const int src_over = 2131165209;
 			
-			// aapt resource value: 0x7f070056
-			public const int status_bar_latest_event_content = 2131165270;
+			// aapt resource value: 0x7f070057
+			public const int status_bar_latest_event_content = 2131165271;
 			
 			// aapt resource value: 0x7f07004d
 			public const int submit_area = 2131165261;
@@ -1807,17 +1810,17 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f07000c
 			public const int tabMode = 2131165196;
 			
-			// aapt resource value: 0x7f07005e
-			public const int text = 2131165278;
+			// aapt resource value: 0x7f07005f
+			public const int text = 2131165279;
 			
-			// aapt resource value: 0x7f07005c
-			public const int text2 = 2131165276;
+			// aapt resource value: 0x7f07005d
+			public const int text2 = 2131165277;
 			
 			// aapt resource value: 0x7f070035
 			public const int textSpacerNoButtons = 2131165237;
 			
-			// aapt resource value: 0x7f07005a
-			public const int time = 2131165274;
+			// aapt resource value: 0x7f07005b
+			public const int time = 2131165275;
 			
 			// aapt resource value: 0x7f07002b
 			public const int title = 2131165227;

@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff0000">
-  <Button
-      android:text="Next Fragment"
-      android:layout_height="wrap_content"
-      android:layout_width="match_parent" />
+    <Button
+        android:id="@+id/nextButton"
+        android:text="Next Fragment"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
 </LinearLayout>
