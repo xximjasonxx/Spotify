@@ -1527,8 +1527,11 @@ namespace Spotify.Droid
 			// aapt resource value: 0x7f02004d
 			public const int ic_stop = 2130837581;
 			
+			// aapt resource value: 0x7f02004f
+			public const int notification_template_icon_bg = 2130837583;
+			
 			// aapt resource value: 0x7f02004e
-			public const int notification_template_icon_bg = 2130837582;
+			public const int progress_bar = 2130837582;
 			
 			static Drawable()
 			{

@@ -112,6 +112,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_stop.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_play_arrow.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_stop.png" />
+    <AndroidResource Include="Resources\drawable\progress_bar.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

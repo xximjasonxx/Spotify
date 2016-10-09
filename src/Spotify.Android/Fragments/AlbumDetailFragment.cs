@@ -74,6 +74,16 @@ namespace Spotify.Droid.Fragments
             await LoadTracks();
         }
 
+        public override void OnPause()
+        {
+            base.OnPause();
+
+            if (_mediaPlayer.IsPlaying)
+                _mediaPlayer.Stop();
+
+            _mediaPlayer.Release();
+        }
+
         async Task LoadTracks()
         {
             ShowProgressDialog();
@@ -108,6 +118,14 @@ namespace Spotify.Droid.Fragments
                 _mediaPlayer.SetDataSource(viewHolder.Track.PreviewUrl);
                 _trackPlaying.StartTrack();
                 _mediaPlayer.PrepareAsync();
+            }
+            else if (_trackPlaying.Track.Id == viewHolder.Track.Id)
+            {
+                _trackPlaying.StopTrack();
+                _mediaPlayer.Stop();
+                _mediaPlayer.Reset();
+
+                _trackPlaying = null;
             }
         }
 
