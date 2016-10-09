@@ -42,8 +42,6 @@ namespace Spotify.Droid.Adapters
 
         public class TrackItemViewHolder : Android.Support.V7.Widget.RecyclerView.ViewHolder
         {
-            private readonly Action<TrackItemViewHolder> _tapAction;
-
             public Track Track { get; set; }
             public TextView TrackNumber { get; private set; }
             public TextView TrackName { get; private set; }
